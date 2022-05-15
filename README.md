@@ -20,34 +20,19 @@ As i have put above, the main steps include two parts,
 
 2. the next step is to merge motors and clamping system and get a point cloud. All this part should be done in Blensor. For this part, you could use assemble_cut_dataset.py script  in belnsor to generate only one secne and generates its corresponding point cloud. In this part. There are three path you should set up.
                           
-* file_path = "/Users/bixuelei/Master/Center_position/TypeA1"
+* file_path = "/Users/bixuelei/Master/Center_position/TypeA1":this path is where you put single motor mesh model (you can generate specific motor using programming provided in create_motor)
 
-this path is where you put single motor mesh model (you can generate specific motor using programming provided in create_motor)
+* Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated": this is where  you put the claming system
 
-* Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated"
-
-this is where  you put the claming system
-
-* save_path = "/Users/bixuelei/Master/Result/Training/" +...
-
-this is where you save your generated numpy file. With this part of code, you could check what kind of secen you will generate.
-If you run those code in windows OS, you should change the path with"'\\"
+* save_path = "/Users/bixuelei/Master/Result/Training/" +...: this is where you save your generated numpy file. With this part of code, you could check what kind of secen you will generate. If you run those code in windows OS, you should change the path with"'\\"
 
 # Generate a whole dataset
 If the secne is what you want, you could using the parameters in the assemble_cut_dataset.py and apply them in the generate_dataset.py.For generate.dataset.py,you should set the number of secen you want to generate(the parameter is 'num_training_models'). For the path setup, it is similar with the setting above.
 
-    * file_base = "/Users/bixuelei/Master/Motors"
+* file_base = "/Users/bixuelei/Master/Motors": here,the file_base is where all you motors save generate by steps 1
 
-        here,the file_base is where all you motors save generate by steps 1
+* Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated": this is where you save you claming system
 
-    * Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated"
-
-        this is where you save you claming system
-
-    * save_path = "/Users/bixuelei/Master/Result/Training/"
-
-        this is where you save your generated numpy file.
+* save_path = "/Users/bixuelei/Master/Result/Training/": this is where you save your generated numpy file.
     
-    * num_training_models=125
-
-        this is number of secen i currently want to generate
+* num_training_models=125: this is number of secen i currently want to generate
