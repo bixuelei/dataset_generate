@@ -20,7 +20,8 @@ As i have put above, the main steps include two parts,
 
 2. the next step is to merge motors and clamping system and get a point cloud. All this part should be done in Blensor. For this part, you could use assemble_cut_dataset.py script  in belnsor to generate only one secne and generates its corresponding point cloud. In this part. There are three path you should set up.
                           
-* file_path = "/Users/bixuelei/Master/Center_position/TypeA1":this path is where you put single motor mesh model (you can generate specific motor using programming provided in create_motor)
+* file_path = "/Users/bixuelei/Master/Center_position/TypeA1":
+this path is where you put single motor mesh model (you can generate specific motor using programming provided in create_motor)
 
 * Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated": this is where  you put the claming system
 
