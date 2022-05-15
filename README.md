@@ -16,20 +16,20 @@ These python programs are used for generating and preprocessing the 3D point clo
 # Get Started
 As i have put above, the main steps include two parts,
 
-1. Generate many(I generate 1250 motors mesh in order to generate enough trainging dataset) motors mesh. As for how to generate the motors mesh, First, you have to successfully install addon Motor Factory on Blender. Then try to run synthetic_motor_generate.py. In order to run this code, you shoud copy the script into blender2.9 and set the BASE_DIR with a path, in which you want to save all you motor mesh models.   If you operate successfully,you will get a directory structure like below ![directory](image/motor_directory.png)
+1. Generate many(I generate 1250 motors mesh in order to generate enough trainging dataset) motors mesh. As for how to generate the motors mesh, First, you have to successfully install addon Motor Factory on Blender. Then try to run synthetic_motor_generate.py in blender. In order to run this code, you shoud copy the script into blender2.9 and set the BASE_DIR with a path, in which you want to save all you motor mesh models.   If you operate successfully,you will get a directory structure like below ![directory](image/motor_directory.png)
 
-2. the next step is to merge motors and clamping system and get a point cloud. All this part should be done in Blensor. For this part, you could use assemble_cut_dataset.py script to generate only one secne and generates its corresponding point cloud. In this part. There are three path you should set up.
+2. the next step is to merge motors and clamping system and get a point cloud. All this part should be done in Blensor. For this part, you could use assemble_cut_dataset.py script  in belnsor to generate only one secne and generates its corresponding point cloud. In this part. There are three path you should set up.
 
                           
-    * file_path = "/Users/bixuelei/Master/Center_position/TypeA1"
+   *  file_path = "/Users/bixuelei/Master/Center_position/TypeA1"
 
-        this path is where you save you single motor mesh model (you can generate specific motor using programming provided in create_motor)
+        this path is where you put single motor mesh model (you can generate specific motor using programming provided in create_motor)
 
-    * Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated"
+   *  Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated"
 
-        this is where you save you claming system
+        this is where  you put the claming system
 
-    * save_path = "/Users/bixuelei/Master/Result/Training/" + Motor_type
+   *  save_path = "/Users/bixuelei/Master/Result/Training/" +...
 
         this is where you save your generated numpy file. With this part of code, you could check what kind of secen you will generate.
         If you run those code in windows OS, you should change the path with"'\\"
