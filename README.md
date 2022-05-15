@@ -35,13 +35,17 @@ As i have put above, the main steps include two parts,
 If the secne is what you want, you could using the parameters in the assemble_cut_dataset.py and apply them in the generate_dataset.py. For generate_dataset.py,you should set the number of secen you want to generate(the parameter is 'num_training_models'). For the path setup, it is similar with the setting above.
 
 * file_base = "/Users/bixuelei/Master/Motors": 
-  here,the file_base is where all you motors save generate by steps 1
+   
+   here,the file_base is where all you motors save generate by steps 1
 
 * Clamping_dir = "/Users/bixuelei/Master/Clamp_system_decorated": 
+  
   this is where you save you claming system
 
 * save_path = "/Users/bixuelei/Master/Result/Training/": 
+  
   this is where you save your generated numpy file.
     
 * num_training_models=125: 
+  
   this is number of secen i currently want to generate
