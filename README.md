@@ -3,8 +3,7 @@ generate synthetic dataset using blender and blensor
 
 These python programs are used for generating and preprocessing the 3D point cloud from Bosch motors. the main steps are divided into two parts. 
 
-1.we use [Blender2.9](https://www.blender.org/download/releases/2-90/) with help of [Motor Factory](https://github.com/cold-soda-jay/blenderMotorFactory) to generate motor mesh motors with different size in different parts. In our case, we wiil firstly generate 1000 motors by copying script in synthetic_motors_generate.py into blender and running it in blender. In this script, we should set BASE_DIR as the root where we save the generated mesh  motors and at same time, the clamping system should put under this directory.
-
+1.we use [Blender2.9](https://www.blender.org/download/releases/2-90/) with help of [Motor Factory](https://github.com/cold-soda-jay/blenderMotorFactory) to generate motor mesh motors with different size in different parts. In our case, we wiil firstly generate 1000 motors by copying script in synthetic_motors_generate.py into blender and running it in blender.
 2.After we got different models of motors, we merge them with clamping_system to form a wholistic secne. For each secne, we have different motor components size and different layout of clamping system. In this way we cloud form a valid variance in order to improve training performance.we use [Blensor](https://www.blensor.org/pages/downloads.html)(in my project,i use the blensor for Macos ) to scan a point cloud from a chosen view set randomly.
 
 # Preparing
