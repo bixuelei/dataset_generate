@@ -711,7 +711,7 @@ def main():
         if not os.path.exists(save_dir) :
             os.makedirs(save_dir)
         scan_cut(save_dir = save_dir, Motor_type = Motor_type, scanner = bpy.data.objects['Camera'], sequence_Motor = k[1],cam_info=random_cam_info)
-        
+        break
         
 
 

@@ -220,5 +220,5 @@ def main(num_motor):
 
 
 if __name__ == '__main__':
-    num_motor_for_dataset=1000      #   paramater to set dataset size
+    num_motor_for_dataset=1250      #   paramater to set dataset size
     main(num_motor=num_motor_for_dataset)
