@@ -31,6 +31,3 @@ In the script, there are some parameter which should be initialized, and its mea
 
 Here is a sample image for augmented point cloud of cuboid(.  
 ![](https://github.com/LinxiQIU/Motor_Datasets_Generation/blob/master/images/cuboid_img.jpg)
-You can get the whole augmented cuboid point cloud dataset by running `augmented_pc_generation.py` with Blensor. 
-
-
