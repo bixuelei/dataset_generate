@@ -11,27 +11,15 @@ We generate 5 kinds of synthetic motor mesh (Type A0, A1, A2, B0, B1) with Blend
 
 
 ### 2. Point Cloud Dataset Generation
-To generate the point cloud dataset, we are using [Blensor_1.0.18_RC_10_Windows](https://www.blensor.org/pages/downloads.html). Make sure it is installed correctly. Since I am using the Windows version of blensor, if you are using other systems, please pay attention to modifying the address format of the relevant python scripts. You can generate the whole point cloud dataset by running 'point_cloud_generation.py'
-> First of all, copy the 'get_3d_bbox.py' and 'points2pcd.py' into the 'Blensor-1.0.18-Blender-2.79-Winx64/2.79/scripts/modules/'.
-> Then open 'Command Prompt' in Windows, navigate to the Blensor directory and enter the following command:
-```python
-blender -b -P path/of/point_cloud_generation.py -- -i path/of/input -o path/of/output -clp path/of/clamping_system -ss(save scene) -sf(scene file format) -bb(3d bounding box) -sc(save cuboid) -cf(cuboid file format) -ri(rotation from image dataset) -cp path/of/csv -n(number of generation)
-```
+To generate the point cloud dataset, we are using [Blensor_1.0.18_RC_Mac](https://www.blensor.org/pages/downloads.html). Make sure it is installed correctly. Since I am using the Mac version of blensor, if you are using other systems, please pay attention to modifying the address format of the relevant python scripts. You can generate the whole point cloud dataset by running 'augmented_pc_generation.py'.
+> Run the Blensor, open Text Editor and open the script named `augmented_pc_generation.py`. You should specify the motor_path (where the mesh models stored) and the save_path(where the generated numpy file stored) and click "Run Script".
 
 | cmd  | Description          | Type | Property |
 | ------- | ----------------------------------------------------------| --- | ---------- |
-| -b   | run Blender in background mode                        |       |            |
-| -P   | python script                                          |      |            |
 | -i   | path of motor mesh model                                | string     | obligatory |
 | -o   | path of save directory                                  | string     | obligatory |
 | -clp | path of clamping system                                 | string     | obligatory |
-| -ss   | whether to save scene file (default=True)               | boolean    | optional   |
-| -sf   | scene file format, option: npy, pcd, both (default: npy)  | string | optional |
-| -bb   | whether to save 3D bounding box of motor (default=True)    | boolean |  optional  |
-| -sc   | whether to save cuboid file (default=True)     | boolen | optional |
 | -cf   | cuboid file format, option: npy, pcd, both (default: npy)  | string | optional |
-| -ri | default=True: apply random rotation info and save. True: load rotation info from given csv file  | boolen  | optional |
-| -cp | if -ri is False, save directory of rotation info.(default is save directory). if -ri is True, path of given csv file | string | optional/obligatory |
 | -n    | number of total generation (an integer multiple of 5)     | integer | obligatory  |
 
 > The point cloud dataset is composed of scene and cuboid point cloud, `-ss` and `-sc` default is True. If you enter `-sc`, it means sc=False, and the cuboid file will not be saved. We provide both numpy and pcd format, so 'both' should be entered after `-sf` and `-cf` respectively. We use the corresponding camera information saved in the camera_motor_setting.csv to scan the scene in point cloud to maintain correspondence with the image dataset, so `-ri` should set True and the path of csv file from the generated image dataset after `-cp` must be given. You can also apply random rotation matrices and save it by default. `-n` represents the total number of point cloud files generated, since there are 5 motors in total, each motor will generate n/5 point cloud files. Here is the example command for my dataset.
